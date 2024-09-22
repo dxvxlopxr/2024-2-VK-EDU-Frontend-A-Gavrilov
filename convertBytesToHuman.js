@@ -18,7 +18,7 @@
  */
 
 export default function convertBytesToHuman(bytes) {
-  if (typeof bytes !== 'number' || bytes < 0 || !Number.isFinite(bytes)) return false;
+  if (!Number.isFinite(bytes) || bytes < 0) return false;
   const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
   if (bytes === 0) return `0 ${units[0]}`;
   const unit_id = Math.floor(Math.log(bytes) / Math.log(1024));
