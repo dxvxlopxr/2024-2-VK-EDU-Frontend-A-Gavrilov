@@ -25,6 +25,8 @@ nonUniqueElements([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
  */
 
 export default function nonUniqueElements(data) {
+  if (!Array.isArray(data) || !data.every(Number.isInteger))
+    throw new TypeError('Input must be an array of integers.');
   const elementsCount = data.reduce((acc, el) => {
     acc[el] = (acc[el] ?? 0) + 1;
     return acc;

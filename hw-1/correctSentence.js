@@ -18,5 +18,6 @@ correctSentence("Greetings, friends.") == "Greetings, friends."
  */
 
 export default function correctSentence(text) {
+  if (typeof text !== 'string') throw new TypeError('Input must be a string.');
   return text.charAt(0).toUpperCase() + text.slice(1) + (text.endsWith('.') ? '' : '.');
 }
