@@ -23,9 +23,6 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "babel-jest": "^29.7.0",
-    "generator-track-mail": "^0.5.1",
-    "jest": "^29.7.0",
-    "yo": "^5.0.0",
-    "mem-fs": "^4.0.0"
+    "jest": "^29.7.0"
   }
 }

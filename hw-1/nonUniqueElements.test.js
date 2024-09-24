@@ -7,3 +7,15 @@ test('returns non unique elements', () => {
   expect(nonUniqueElements([5, 5, 5, 5, 5])).toEqual([5, 5, 5, 5, 5]);
   expect(nonUniqueElements([10, 9, 10, 10, 9, 8])).toEqual([10, 9, 10, 10, 9]);
 })
+
+test('Выбрасывает TypeError для неправильного типа данных', () => {
+  expect(() => nonUniqueElements(-1)).toThrow('Input must be an array of integers.');
+  expect(() => nonUniqueElements(['string'])).toThrow('Input must be an array of integers.');
+  expect(() => nonUniqueElements(true)).toThrow('Input must be an array of integers.');
+  expect(() => nonUniqueElements(null)).toThrow('Input must be an array of integers.');
+  expect(() => nonUniqueElements(undefined)).toThrow('Input must be an array of integers.');
+  expect(() => nonUniqueElements([true])).toThrow('Input must be an array of integers.');
+  expect(() => nonUniqueElements({})).toThrow('Input must be an array of integers.');
+  expect(() => nonUniqueElements(NaN)).toThrow('Input must be an array of integers.');
+  expect(() => nonUniqueElements(Infinity)).toThrow('Input must be an array of integers.');
+});
