@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - hw-2
+permissions:
+  pages: write
+  id-token: write
 jobs:
   Build-and-Deploy:
     runs-on: ubuntu-latest
