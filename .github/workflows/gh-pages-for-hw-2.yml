@@ -14,7 +14,7 @@ jobs:
         node-version: 20
     - name: Install Dependencies
       working-directory: ./hw-2
-      run: npm ci
+      run: npm i
     - name: Build Production
       working-directory: ./hw-2
       run: npm run prod
