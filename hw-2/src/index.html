@@ -8,15 +8,19 @@
 </head>
 
 <body>
-    <!-- <span class="material-symbols-outlined">favorite</span> -->
-    <!-- <ul class="messages"></ul>
-    <form class="send-message-form" action="/">
-        <input class="send-message-form-text-input" name="message-text" placeholder="Введите сообщение" type="text">
-    </form> -->
-    <ul class="messages"></ul>
-    <form class="send-message-form" action="/">
-        <input class="send-message-form-text-input" name="message-text" placeholder="Введите сообщение" type="text">
-    </form>
+    <div id="messenger">
+        <div class="chat-header">
+            <span id="back" class="material-symbols-outlined">arrow_left_alt</span>
+            <h1>Локальное хранилище браузера</h1>
+        </div>
+        <ul class="messages"></ul>
+        <form class="send-message-form" action="/">
+            <input class="send-message-form-text-input" name="message-text" placeholder="Введите сообщение" type="text">
+            <button class="send-message-form-submit-button" type="submit">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+        </form>
+    </div>
 </body>
 
 </html>

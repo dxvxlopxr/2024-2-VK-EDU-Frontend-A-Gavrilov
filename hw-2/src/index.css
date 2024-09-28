@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
-/* .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-} */
-
 html {
     box-sizing: border-box;
 }
@@ -20,34 +12,126 @@ html {
 
 body {
     margin: 0;
-    background-color: #fff;
-    color: #333;
+
+    background-color: #181818;
+    color: #ddd;
     font-size: 15px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
     line-height: 20px;
 }
 
-.send-message-form {
-    width: 100%;
-    display: inline-block;
-    border: 1px solid rgba(25, 25, 25, 0.32);
+#messenger {
+    display: flex;
+    height: 100vh;
+
+    flex-direction: column;
+}
+
+.chat-header {
+    display: flex;
+    margin: 8px 8px 0 8px;
+
+    align-items: center;
+}
+
+#back {
+    margin: 4px;
+    height: 40px;
+    width: 40px;
+    border: 0;
+    border-radius: 50%;
+    padding: 8px;
+
+    background-color: #202020;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.chat-header > h1 {
+    margin: 4px auto;
+    border-radius: 10px;
+    padding: 8px 16px;
+
+    background-color: #202020;
+    font-size: 20px;
+    line-height: 30px;
 }
 
 .messages {
-    color: red;
-    /* border: 1px solid; */
-    border-radius: 4px;
-    margin: 4px 0;
-    padding: 4px;
+    display: flex;
+    margin: 8px;
+    flex: 1;
+    border-radius: 10px;
+    padding: 8px;
+    
+    background-color: #202020;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: auto;
 }
 
-.send-message-form-text-input [type=submit] {
-    visibility: collapse;
+.message {
+    display: flex;
+    margin: 4px;
+    border-radius: 10px;
+
+    background-color: #303030;
+    list-style-type: none;
+    align-items: center;
+}
+
+.message-time, .message-sender {
+    margin: 8px;
+    border-radius: 10px;
+    padding: 8px;
+
+    background-color: #404040;
+    color: #bbb;
+}
+
+.message-text {
+    margin: 8px;
+    flex: 1;
+    border-radius: 10px;
+    padding: 8px;
+
+    background-color: #404040;
+    color: #eee;
+}
+
+.send-message-form {
+    display: flex;
+    margin: 0 8px 8px 8px;
+    border-radius: 10px;
+    padding: 8px;
+
+    background-color: #202020;
 }
 
 .send-message-form-text-input {
+    margin: 8px;
+    flex: 1;
+    min-width: 0;
     border: 0;
+    border-radius: 10px;
+    padding: 0 16px;
+
+    background-color: #303030;
+    color: #ddd;
     outline: none;
-    width: calc(100% - 2px);
+}
+
+.send-message-form-submit-button {
+    margin: 4px;
+    height: 40px;
+    width: 40px;
+    border: 0;
+    border-radius: 50%;
+    padding: 8px;
+    
+    background-color: #303030;
+    color: #ddd;
+    outline: none;
+    cursor: pointer;
 }

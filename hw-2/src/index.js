@@ -3,9 +3,17 @@ import './index.css';
 const addMessage = (message) => {
   Array.from(document.getElementsByClassName("messages")).forEach((messages) => {
     const newMessage = document.createElement("li");
-    newMessage.textContent = `${new Date(message["date"]).toLocaleString("ru-RU")} \
-    | ${message["sender"]} \
-    > ${message["text"]}`;
+    newMessage.setAttribute("class", "message");
+    const time = document.createElement("span");
+    time.setAttribute("class", "message-time");
+    time.textContent = new Date(message["date"]).toLocaleString("ru-RU");
+    const sender = document.createElement("span");
+    sender.setAttribute("class", "message-sender");
+    sender.textContent = message["sender"];
+    const text = document.createElement("span");
+    text.setAttribute("class", "message-text");
+    text.textContent = message["text"];
+    newMessage.append(time, sender, text);
     messages.appendChild(newMessage);
   });
 };
@@ -26,10 +34,8 @@ Array.from(document.getElementsByClassName('send-message-form')).forEach((sendMe
   sendMessageForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const messageTextInput = sendMessageForm.getElementsByClassName("send-message-form-text-input")[0];
+    if (!messageTextInput.value) return;
     sendMessage({ sender: "Alexander Gavrilov", date: Date.now(), text: messageTextInput.value });
     messageTextInput.value = "";
   });
 });
-
-//? Стилизовать форму отправки сообщений (в меру возможности), в соответствии с макетом, для позиционирования элементов формы можно использовать CSS Flexbox
-//? Настроить деплой ваших страничек на GitHub Pages 
