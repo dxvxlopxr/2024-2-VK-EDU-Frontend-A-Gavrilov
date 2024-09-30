@@ -14,6 +14,10 @@ const addMessage = (message) => {
     text.setAttribute("class", "message-text");
     text.textContent = message["text"];
     newMessage.append(time, sender, text);
+    const messagesCount = messages.getElementsByClassName("message").length;
+    if (messagesCount) 
+      if (messages.getElementsByClassName("message")[messagesCount - 1].getElementsByClassName("message-sender")[0].textContent !== message["sender"])
+        messages.appendChild(document.createElement("br"));
     messages.appendChild(newMessage);
   });
 };
