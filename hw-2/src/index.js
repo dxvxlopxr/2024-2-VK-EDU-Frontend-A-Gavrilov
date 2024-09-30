@@ -30,12 +30,14 @@ const sendMessage = (message) => { addMessage(message), saveMessageToStorage(mes
 const messagesFromStorage = localStorage.getItem("messages");
 if (messagesFromStorage) JSON.parse(messagesFromStorage).forEach(addMessage);
 
+const sender = prompt("Введите Ваше имя: ");
+
 Array.from(document.getElementsByClassName('send-message-form')).forEach((sendMessageForm) => {
   sendMessageForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const messageTextInput = sendMessageForm.getElementsByClassName("send-message-form-text-input")[0];
     if (!messageTextInput.value) return;
-    sendMessage({ sender: "Alexander Gavrilov", date: Date.now(), text: messageTextInput.value });
+    sendMessage({ sender, date: Date.now(), text: messageTextInput.value });
     messageTextInput.value = "";
   });
 });
