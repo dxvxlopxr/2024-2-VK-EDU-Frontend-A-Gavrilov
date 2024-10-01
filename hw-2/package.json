@@ -3,7 +3,7 @@
   "scripts": {
     "build": "webpack --mode=development",
     "prod": "webpack --mode=production",
-    "dev": "webpack-dev-server --mode=development --hot --host=127.0.0.1"
+    "dev": "webpack-dev-server --mode=development --hot"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
